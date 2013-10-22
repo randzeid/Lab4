@@ -1,0 +1,62 @@
+/* Setter margen (margin) og utfylling  (padding) til 0,  siden det er vanlig med et satt verdi i nettleseren.*/
+body {
+	margin:0;
+	padding:0;
+
+}
+
+#body-container {
+	width:415px; /* setter bredden konstant til 415 PX for body container!*/
+	height:500px; /* Setter bredden konstant til 500px for body container!*/
+	margin:0 auto; /* dette vil sentrere DIV*/
+	border:1px solid #3285ef; /*Setter en ramme rundt body container DIV*/
+
+}
+
+.glossary-container{
+	clear: both; /*Dette vil ikke tillate noen elementer som flyter på noen av sidene*/
+
+}
+
+.content-container{
+	height:430px;/*Setter høyden konstant til 430 PX for content contain klassen*/
+	width:415px;/* Setter bredden konstant til 415 PX for content contain klassen*/
+	overflow:auto;/*Et rulle felt vises når innholdet er større enn den spesifiserte  høyden*/
+	font-family: 'Arial',Verdana,Tahoma;/*Tar standard fonten "arial"*/
+	font-size: 10pt;/**/
+	clear:both; /* Dette vil ikke tillate noen elementer som flyter på noen av sidene*/
+}
+
+/*Definerer egenskaper for alle div objekter som ligger innen body container elementet og tilhører klassen body container*/
+
+.content-container div {
+	padding-left:10px; /*Utfylling (padding) settes til 10px*/
+	border-bottom: 1px #666666 solid; /*For adskille hver gruppe given fargen til nedre rammeside som #666666 (gray) med 1px*/
+}
+
+.content-container p.return-to-top {
+	color: #0066FF; /*Gir tekst farge til "tilbake til top"*/
+	text-decoration: underline; /*Teksten skal understrekes!*/
+	text-align: Right; /*Teksten skal justere til høyre siden */
+	margin-right: 10px; /*Gir en mar på 10px fra høyre*/
+	cursor: pointer; /*Kursøren blir til en 'hånd'*/
+
+}
+
+/*Egenskapene til den ikke-ordnede listen defineres her*/
+.firstUL{
+	padding:0px 0px 0px 10px; /* Litt utfylling mot venstre og 0 mot toppen, høyre og bunnen*/
+	margin:0px; /* Setter alle marger til 0 px*/
+	background-color: #3285ef; /*Bakgrunnsfarge*/
+
+}
+.firstul li {
+	Background:;
+	display: inline;
+	font-family: 'arial',verdana,tahoma;
+	font-size: 16pt;
+	font-weight:bold;
+	padding: 10px 15px 22px;
+	line-height: 70px;
+	cursor: pointer;
+}
