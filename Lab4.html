@@ -1,77 +1,131 @@
-﻿<DOCTYPE html>
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-	<title> LAB4 alfabetisk liste </title>
-	 <!-- Javascript biblioteket gjøres tilgjengelig -->
-	 <script src="js/jquery-1.8.1.js"></script>
-	  <!-- CSS filen gjøres tilgjenelig-->
-	 <link rel="stylesheet" type="text/css" href="LAB4.css" />
-	 <script>
-	 $(function()  {
-	 // her skal jquery funksjoner implementeres //
-	 
-	 ));
-	 </script>
+	<meta charset="utf-8">
+	<title>LAB4 alfabetisk liste</title>
+	
+	<link rel="stylesheet" type="text/css" href="lab4.css"/>
+	<script src="js/jquery-1.8.1.js"></script>
+	<script src="js/jquery.ScrollTo-1.4.7.js"></script>	
+	
+	<script>
+	$(function() {
+		$( ".firstUL li" ).each(function() {
+			$( this ).click(function() {
+				$( ".firstUL li" ).removeClass( "selected" );
+				$( this ).addClass( "selected" );
+				elementClick = $( this ).attr( "id" );
+				
+				$( ".content-container" ).scrollTo($( "#content-for-"+elementClick ), 800);
+				
+				$( ".content-container div" ).css( {'background-color' : '#ffffff'} );
+				$( ".content-container #content-for-"+elementClick ).css( {'background-color' : '#d2e2fc'} );
+			});
+	});
+	
+		$( 'return-to-top' ).click(function() {
+			$( ".firstUL li" ).each(function() {
+				$( "firstUL li" ).removeClass( "selected" );
+			});
+			
+			$( "#a" ).addClass( "selected" );
+			$( "content-container" ).scrollTo($( "#content-for-a" ), 800);
+			$( ".content-container div" ).css( {'background-color' : '#d2e2fc'} );
+		});
+	});
+	
+	</script>
+	
 </head>
 <body>
-<div id="body-container">
 
+<div id="body-container">
 	<div class="glossary-container">
-	
-	<div class="content-container">
-	
-</table>
-		<div class="glossary-container">
-			<ul class="firstUL">
-				<li id="a" class="selected">A</li>
-				<li id="b">B</li>
-				<li id="C">C</li>
-				<li id="C">D</li>
-				<li id="C">E</li>
-		
-			</div>
-			
-<div class="content-container">
-	<!-- A -->
-	<div id="content-for-a" style="background-color:#d2e2fc">
-	<!-- Innholdet for A  -->
-	<dl>
-		<dt>Actionscript</dt>
-		<dd>ActionScript er et objektorientert språk som opprinnelig utviklet av Macromedia Inc. (nå eid av Adobe Systems). 
-		Det er en dialekt av ECMAScript (mao det er et supersett av syntaks og semantikk av språket mer allment kjent som JavaScript), 
-		og brukes primært for utvikling av nettsteder og programvare rettet mot Adobe Flash Player-plattform brukes på websider i form av innebygde SWF-filer. 
-		Språket i seg selv er åpen kildekode i at spesifikasjonen tilbys gratis [2] og både en åpen kildekode kompilator (som en del av Apache Flex) og åpen 
-		kildekode virtuell maskin (Mozilla Tamarin) er tilgjengelig. </dd>
-	<dt>Applescript</dt>
-		<dd>AppleScript er et skriptspråk laget av Apple Inc. og bygget inn Macintosh-operativsystemer siden System 7. 
-		Begrepet "AppleScript" kan referere til skripting systemet selv, eller til bestemte skript som er skrevet i AppleScript språk.</dd>
-		</dl>
-		<p class ="return-to-top"> Tilbake til toppen </p>
+		<ul class="firstUL">
+			<li id="a" class="selected">A</li>
+			<li id="b">B</li>
+			<li id="c">C</li>
+			<li id="d">D</li>
+		</ul>
 	</div>
-	<!-- B -->
+
+<div class="content-container">
+	<div id="content-for-a" style="background-color:#d2e2fc">
+		<dl>
+			<dt>Actionscript</dt>
+				<dd>Actionscript er et programmeringsspråk basert på ECMAScript som blir brukt primært til
+				utvikling av nettsider og programvare for Adobe Flash Player-plattformen, men også i noen 
+				databaseapplikajsoner og grunnleggende robotikk.</dd>
+			<dt>Applescript</dt>
+				<dd>Applescript er et skript-språk laget av Apple Inc. og det er innebygd i Macintosh 
+				operativsystemet siden System 7.</dd>
+		</dl>
+		<p class="return-to-top">Tilbake til toppen</p>
+	</div>
+		
 	<div id="content-for-b">
-	<!-- Innholdet for B -->
+		<dl>
+			<dt>BASIC</dt>
+				<dd>BASIC (et akronym for Beginner All-purpose Symbolic Instruction Code) 
+				er en familie av generell, høyt nivå programmeringsspråk som designfilosofi vektlegger brukervennlighet.
+				I 1964 designet John G. Kemeny og Thomas E. Kurtz den opprinnelige BASIC språk ved Dartmouth College 
+				i New Hampshire. De ønsket å sette studentene i felt enn vitenskap og matematikk for å bruke datamaskiner. 
+				På den tiden krevde nesten all bruk av datamaskiner skriving tilpasset programvare, som var 
+				noe bare forskere og matematikere tendens til å gjøre.</dd>
+			<dt>B</dt>
+				<dd>B er et programmeringsspråk som ble utviklet ved AT&T Bell Laboratories i 1969. Språket ble opprinnelig utviklet av Ken Thompson, og ble senere videreutviklet av Thompson og Dennis Ritchie.
+					B var en forenklet versjon av programmeringsspråket BCPL. B ble erstattet av programmeringsspråket C i 1973, og er idag nesten ikke lenger i bruk.</dd>
+				
+		</dl>
+		<p class="return-to-top">Tilbake til toppen</p>
 	</div>
 	
 	<div id="content-for-c">
-	<!-- innholdet for C -->
+		<dl>
+			<dt>C</dt>
+				<dd>I databehandling er en generell programmeringsspråk opprinnelig utviklet av Dennis Ritchie 
+				mellom 1969 og 1973 ved AT & T Bell Labs.Like mest imperative språk i ALGOL tradisjon, 
+				har C anlegg for strukturert programmering og lar leksikalsk varierende omfang og rekursjon, 
+				mens en statisk type system hindrer mange utilsiktede operasjoner. Designen gir konstruksjoner som 
+				kartlegger effektivt til typiske maskininstruksjoner, og derfor har det funnet varig bruk i applikasjoner 
+				som tidligere hadde blitt kodet i forsamlingen språk, særlig systemprogramvaren som Unix operativsystem</dd>
+			<dt>C++</dt>
+				<dd>C++ er et populært høynivå programmeringsspråk som er en utvidelse av språket C. 
+					C++ ble opprinnelig kalt «C with Classes» og ble utviklet og implementert av dansken 
+					Bjarne Stroustrup omkring 1983–85, som da jobbet for AT&T Bell Labs.
+					C++ er et multiparadigmespråk, med støtte for funksjonell programmering, 
+					objektorientert programmering (OOP), dataabstraksjon og generisk programmering. 
+					Populariteten skyldes både at det bygger på C og at det er implementert for de fleste operativsystem.</dd>
+				
+		</dl>
+		<p class="return-to-top">Tilbake til toppen</p>
 	</div>
 	
 	<div id="content-for-d">
-	<!-- innholdet for D -->
+		<dl>
+			<dt>D</dt>
+				<dd>D er et programmeringsspråk utviklet av Walter Bright. Det tar mål av seg til å kombinere ytelse 
+					og fleksibillitet fra språk som C og C++, med høynivåfunksjonalitet og programmerervennlighet 
+					fra språk som Ruby og Python. D er et multiparadigmespråk, og har egne primitiver 
+					for å støtte både imperativ, funksjonell, generisk og objektorientert programmering.
+					[1] Språket bruker en syntaks som er svært lik den som brukes i C, C++, Java og C#.</dd>
+			<dt>Delphi</dt>
+				<dd>Delphi er et programvareutviklingsmiljø (Integrated Development Environment (IDE)) basert på 
+					programmeringsspråket Pascal. Grunnlaget var det særdeles populære verktøyet 
+					Turbo Pascal for PC med en effektiv kompilator utviklet under ledelse av Anders Hejlsberg. 
+					Borland Software Inc. utviklet en objektbasert utvidelse kalt Object Pascal som de i neste runde 
+					tilpasset for bruk mot Windows («Objekt Pascal for Windows»). 
+					De neste versjonene ble lansert under navnet Delphi.</dd>
+				
+		</dl>
+		<p class="return-to-top">Tilbake til toppen</p>
 	</div>
-	</div> <!-- lukker innholdsbeholderen! -->
-
-
-
-
-
-
-</div>  <!-- Lukker of body-container -->
+</div>	
 	
-	<!-- Signatur og dato -->
+<address> Laget 21 Oktober 2013<br>
+		av Rand.</address>
 	
-<address> Laget 22 oktober 2013 <br>
-	av Rand. </Address>
-
-</body>
-</html>
+ </body>
+ </html>
